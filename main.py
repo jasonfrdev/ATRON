@@ -19,18 +19,18 @@ def get_bot_stats(bot):
     total_messages = sum(bot.messages_sent.values()) if hasattr(bot, 'messages_sent') else 0
     total_commands = len(bot.commands)
     
-    # Server-Statistiken
+    
     total_servers = len(bot.guilds)
     total_members = sum(guild.member_count for guild in bot.guilds)
     avg_members_per_server = total_members / total_servers if total_servers else 0
 
-    # Aktivität des Bots
+    
     avg_messages_per_day = total_messages / (uptime.total_seconds() / 86400) if uptime.total_seconds() > 0 else 0
     
     
     active_voice_channels = sum(1 for guild in bot.guilds for channel in guild.voice_channels if channel.members)
     active_text_channels = sum(1 for guild in bot.guilds for channel in guild.text_channels if channel.members)
-    # Anzahl der kürzlich beigetretenen Mitglieder könnte schwierig sein, wenn du keine eigenen Daten dazu speicherst
+    
 
     return {
         "Total Servers": total_servers,
@@ -39,7 +39,7 @@ def get_bot_stats(bot):
         "Avg. Messages/Day": avg_messages_per_day,
         "Active Voice Channels": active_voice_channels,
         "Active Text Channels": active_text_channels,
-        # Weitere Statistiken hinzufügen...
+        
     }
 
 def run():
