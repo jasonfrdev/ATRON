@@ -26,10 +26,8 @@ def get_bot_stats(bot):
 
     # Aktivität des Bots
     avg_messages_per_day = total_messages / (uptime.total_seconds() / 86400) if uptime.total_seconds() > 0 else 0
-    # Möglicherweise benötigst du eine Datenbank oder ein ähnliches System, um Befehle zu verfolgen
-    # Top_Befehle = get_top_commands()  # Hier müsstest du die meistgenutzten Befehle abrufen
     
-    # Aktuelle Events
+    
     active_voice_channels = sum(1 for guild in bot.guilds for channel in guild.voice_channels if channel.members)
     active_text_channels = sum(1 for guild in bot.guilds for channel in guild.text_channels if channel.members)
     # Anzahl der kürzlich beigetretenen Mitglieder könnte schwierig sein, wenn du keine eigenen Daten dazu speicherst
