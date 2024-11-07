@@ -1,3 +1,5 @@
+# THE CODE MAY BE OUTDATED
+
 import discord
 from discord.ext import commands
 import logging
